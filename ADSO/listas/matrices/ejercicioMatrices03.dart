@@ -14,43 +14,53 @@ import 'dart:io';
 
 void main(List<String> args) {
 
- List<List<double>> matrizProduct = [
-  [30,40,20],
-   [10,12,15],
-    [8,10,7],
-     [25,30,30],
-      [12,20,10],
- ];
+  // Matriz de producción por turno para cada artículo
+  List<List<double>> matrizProduct = [
+    [30, 40, 20],
+    [10, 12, 15],
+    [8, 10, 7],
+    [25, 30, 30],
+    [12, 20, 10],
+  ];
 
- List<String> articulos = [];
- List<int>totalArticulos = [0,0,0,0,0];
-  List<int>totalTurnos = [0,0,0];
-  int mayorArticulo =0;
-  String nombreMayorArt ;
+  List<String> articulos = [];
+  List<double> totalArticulos = [0, 0, 0, 0, 0];  // Total de producción por artículo
+  List<double> totalTurnos = [0, 0, 0];  // Total de producción por turno
+  double mayorArticulo = 0;  // Variable para almacenar el artículo con mayor producción
+  String nombreMayorArt = '';  // Inicializamos la variable
 
+  // Solicitar nombres de artículos y calcular producción por artículo y turno
+  for (int i = 0; i < matrizProduct.length; i++) {
+    print("Ingrese el nombre del artículo ${i + 1}: ");
+    articulos.add(stdin.readLineSync()!);  // Guardamos el nombre del artículo
 
- for (int  i = 0; i < matrizProduct.length; i++) {
-  print("ingrese el nombre del articulo ${i +1} ");
- articulos.add(stdin.readLineSync()!);
- for (int j = 0; j < matrizProduct[0].length; j++) {
-totalArticulos[i] += matrizProduct[i][j];
-totalTurnos[j] += matrizProduct[i][j];
-}
- }
- print(totalArticulos);
- for (int  i = 0; i < totalArticulos.length; i++) {
-  print("el total de ${articulos[i]} es de ${totalArticulos[i]} ");
-   
- }
- for (int  j = 0; j < totalTurnos.length; j++) {
-  print("el turno ${i+1} hizo una produccion de  ${totalTurnos[i]} ");
-}
-for (int  i = 0; i < totalArticulos.length; i++) {
-  if (totalArticulos[i] > mayorArticulo) {
-    mayorArticulo = totalArticulos[i];
-    nombreMayorArt = articulos[i];
+    // Sumar la producción por artículo y por turno
+    for (int j = 0; j < matrizProduct[0].length; j++) {
+      totalArticulos[i] += matrizProduct[i][j];
+      totalTurnos[j] += matrizProduct[i][j];
+    }
   }
-}
-print('*' *50)
-print("el articulo $nombreMayorArt mayor fue de $mayorArticulo unidades ");
+
+  // Imprimir el total de producción por artículo
+  print("Producción total por artículo:");
+  for (int i = 0; i < totalArticulos.length; i++) {
+    print("El total de ${articulos[i]} es de ${totalArticulos[i]} unidades.");
+  }
+
+  // Imprimir el total de producción por turno
+  print("\nProducción total por turno:");
+  for (int j = 0; j < totalTurnos.length; j++) {
+    print("El turno ${j + 1} hizo una producción de ${totalTurnos[j]} unidades.");
+  }
+
+  // Determinar el artículo con mayor producción
+  for (int i = 0; i < totalArticulos.length; i++) {
+    if (totalArticulos[i] > mayorArticulo) {
+      mayorArticulo = totalArticulos[i];
+      nombreMayorArt = articulos[i];
+    }
+  }
+  // Imprimir el artículo con mayor producción
+  print('*' * 50);
+  print("El artículo con mayor producción fue $nombreMayorArt con $mayorArticulo unidades.");
 }
