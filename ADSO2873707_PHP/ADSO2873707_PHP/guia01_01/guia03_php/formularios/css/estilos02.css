@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+body , html{
+    height: 100%;/*centra en el eje horizontal */
+    display: flex;
+    justify-content: center;/*centra en el eje horizontal */
+    align-items: center;/*centra en el eje vertical */
+
+}
+.form-container{
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    
+}
+.form-container label{
+    display: block;
+    margin-top: 10px;
+}
+.form-container h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.form-container input{
+    padding: 5px;
+    border:  1px solid #ccc;
+}
+.form-container button{
+    margin-top: 10px;
+    padding: 10px;
+    background-color:rgb(17, 181, 88);
+    color: rgb(5, 5, 12);
+    text-align: center;
+    width: 100%;
+}
+.form-container input[type="date"]{
+    width: 100%;
+    text-align: center;
+    
+}
