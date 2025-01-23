@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-image: linear-gradient(to right, 
+    #ae00ff,
+    #9903df,
+    #4f0174,
+    #170122,
+    #000000,
+    #170122,
+    #4f0174,
+    #9903df,
+    #ae00ff
+  );
+}
+
+body,html{
+    color: #fff;
+    height: 100%; /*Abarca toda la pantalla*/
+    display: flex;
+    justify-content: center; /*Centro de derecha a isquierda*/
+    align-items: center; /*Centro de arriba a abajo*/
+    text-align: center;
+}
+
+.form-container{
+    border: 2px solid blueviolet;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: #000;
+    background-color: #0c0c0c;
+}
+
+.from-colum{
+    columns: 2;
+}
+
+.form-container label{
+    display: block; /*Para alinear en lineas individuales*/
+    margin-bottom: 5px;
+}
+
+.form-container h2{
+    margin-bottom: 10px;/*Para distanciar una linea de otra*/
+}
+
+.form-container input{
+    border: 2px solid blueviolet;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+.form-container input[type="submit"]{
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid blueviolet;
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-container input[type="submit"]:hover{
+    padding: 10px;
+    background-color: blueviolet;
+    color: #000;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-container input[type="date"]{
+    width: 100%;
+    text-align: center;
+}
+
+.form-group select{
+    border: 2px solid blueviolet;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    width: 100%;
+    text-align: center;
+}
